@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+  {% block content %} 
+  <div class="container">
+        <div class="jumbotron jumbotron-fluid" style="background-color:lightyellow;">
+          <a href="/add_details" class="btn btn-primary" style="margin-top: 0.5cm; margin-bottom: 0.5cm; margin-left: 0.5cm;" role="button" data-bs-toggle="button">Go Back</a>
+        <table class="table" id="salesTable">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                {% for invent in invent %}
+                <tr>
+                    <td colspan="1">
+                    {{invent.id}}
+                    </td>
+                    <td>
+                    {{invent.created_at}}
+                    </td>
+                    <td>
+                    {{invent.quantity}}
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+{% endblock %}
